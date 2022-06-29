@@ -1,4 +1,6 @@
-﻿namespace EvalOgreBoulotteur.OgreBoulotteur.Model.Square
+﻿using EvalOgreBoulotteur.OgreBoulotteur.Shared;
+
+namespace EvalOgreBoulotteur.OgreBoulotteur.Model.Square
 {
     class Ground : Square
     {
@@ -10,6 +12,11 @@
             {
                 SetSprite(num, Ground.sprite);
             }
+        }
+        
+        public override ISprite GetSpriteExtended(int num)
+        {
+            return null;
         }
     }
 }

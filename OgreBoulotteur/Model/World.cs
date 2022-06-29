@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using EvalOgreBoulotteur.OgreBoulotteur.Model.Square;
 using EvalOgreBoulotteur.OgreBoulotteur.Shared;
 
@@ -27,7 +28,7 @@ namespace EvalOgreBoulotteur.OgreBoulotteur.Model
         }
 
         private ISquare[,] squares;
-        // private readonly List<IPawn> pawns;
+        private readonly List<IPawn> pawns;
 
         public Model Model { get; set; }
 
@@ -37,7 +38,7 @@ namespace EvalOgreBoulotteur.OgreBoulotteur.Model
             Width = width;
             Density = density;
             Model = model;
-            // this.pawns = new();
+            this.pawns = new();
             this.InitializeRandomlySquares();
         }
 
@@ -92,26 +93,26 @@ namespace EvalOgreBoulotteur.OgreBoulotteur.Model
             return null;
         }
 
-        // public List<IPawn> GetPawn(int x, int y) {
-        //     List<IPawn> result = new();
-        //
-        //     foreach (IPawn pawn in this.pawns) {
-        //         if (pawn.X == x && pawn.Y == y) {
-        //             result.Add(pawn);
-        //         }
-        //     }
-        //     return result;
-        // }
+        public List<IPawn> GetPawn(int x, int y) {
+            List<IPawn> result = new();
+        
+            foreach (IPawn pawn in this.pawns) {
+                if (pawn.X == x && pawn.Y == y) {
+                    result.Add(pawn);
+                }
+            }
+            return result;
+        }
 
-        // public void LivePawns() {
-        //     foreach (IPawn pawn in this.pawns) {
-        //         pawn.Live();
-        //     }
-        // }
-        //
-        // public void AddPawn(IPawn pawn) {
-        //     this.pawns.Add(pawn);
-        //     pawn.World = this;
-        // }
+        public void LivePawns() {
+            foreach (IPawn pawn in this.pawns) {
+                pawn.Live();
+            }
+        }
+
+        public void AddPawn(IPawn pawn) {
+            this.pawns.Add(pawn);
+            pawn.World = this;
+        }
     }
 }

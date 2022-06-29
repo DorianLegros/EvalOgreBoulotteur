@@ -12,7 +12,7 @@ namespace EvalOgreBoulotteur.OgreBoulotteur.Model.Factories
 
         public override ISquare makeSquare()
         {
-            int rand = new Random().Next(0, 2);
+            int rand = new Random().Next(0, 3);
 
             if (rand == 0)
             {

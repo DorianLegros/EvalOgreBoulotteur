@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using EvalOgreBoulotteur.OgreBoulotteur.Shared;
 
 namespace EvalOgreBoulotteur.OgreBoulotteur.View
@@ -25,10 +26,22 @@ namespace EvalOgreBoulotteur.OgreBoulotteur.View
                 string line2 = "";
                 for (int x = 0; x < Model.Width; x++)
                 {
-                    line1 += Model.GetSquare(x, y).GetSprite(0).Character;
-                    line1 += Model.GetSquare(x, y).GetSprite(1).Character;
-                    line2 += Model.GetSquare(x, y).GetSprite(2).Character;
-                    line2 += Model.GetSquare(x, y).GetSprite(3).Character;
+                    List<IPawn> pawns = Model.GetPawn(x, y);
+
+                    if (pawns.Count != 0)
+                    {
+                        line1 += pawns[0].GetSprite(0).Character;
+                        line1 += pawns[0].GetSprite(1).Character;
+                        line2 += pawns[0].GetSprite(2).Character;
+                        line2 += pawns[0].GetSprite(3).Character;
+                    }
+                    else
+                    {
+                        line1 += Model.GetSquare(x, y).GetSprite(0).Character;
+                        line1 += Model.GetSquare(x, y).GetSprite(1).Character;
+                        line2 += Model.GetSquare(x, y).GetSprite(2).Character;
+                        line2 += Model.GetSquare(x, y).GetSprite(3).Character;
+                    }
                 }
 
                 Console.WriteLine(line1);

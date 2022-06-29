@@ -2,7 +2,7 @@
 
 namespace EvalOgreBoulotteur.OgreBoulotteur.Model.Square
 {
-    abstract class Square : ISquare
+    public abstract class Square : ISquare
     {
         public ISprite Sprite { get; private set; }
         private readonly ISprite[] sprites;
@@ -19,8 +19,9 @@ namespace EvalOgreBoulotteur.OgreBoulotteur.Model.Square
         {
             return this.sprites[num];
         }
-
-        public void SetSprite(int num, ISprite sprite) {
+        public abstract ISprite GetSpriteExtended(int num);
+        public void SetSprite(int num, ISprite sprite)
+        {
             this.sprites[num] = sprite;
         }
     }

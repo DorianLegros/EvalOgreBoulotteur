@@ -1,4 +1,5 @@
-﻿using EvalOgreBoulotteur.OgreBoulotteur.Model.Factories;
+﻿using System.Collections.Generic;
+using EvalOgreBoulotteur.OgreBoulotteur.Model.Factories;
 using EvalOgreBoulotteur.OgreBoulotteur.Shared;
 
 namespace EvalOgreBoulotteur.OgreBoulotteur.Model
@@ -23,20 +24,20 @@ namespace EvalOgreBoulotteur.OgreBoulotteur.Model
             return World.GetSquare(x, y);
         }
 
-        // public List<IPawn> GetPawn(int x, int y) {
-        //     return World.GetPawn(x, y);
-        // }
+        public List<IPawn> GetPawn(int x, int y) {
+            return World.GetPawn(x, y);
+        }
 
         public void Live() {
-            // LivePawns();
+            LivePawns();
         }
 
         public void LivePawns() {
-            // Forest.LivePawns();
+            World.LivePawns();
         }
 
-        // public void AddPawn(IPawn pawn) {
-        //     Forest.AddPawn(pawn);
-        // }
+        public void AddPawn(IPawn pawn) {
+            World.AddPawn(pawn);
+        }
     }
 }

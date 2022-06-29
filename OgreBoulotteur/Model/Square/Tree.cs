@@ -10,5 +10,10 @@ namespace EvalOgreBoulotteur.OgreBoulotteur.Model.Square
                 SetSprite(num, Tree.sprite);
             }
         }
+        
+        public override ISprite GetSpriteExtended(int num)
+        {
+            return null;
+        }
     }
 }
