@@ -1,9 +1,13 @@
 ﻿using System;
+using System.Collections.Generic;
+using EvalOgreBoulotteur.OgreBoulotteur.Shared;
 
 namespace EvalOgreBoulotteur.OgreBoulotteur.Model.Pawn
 {
     public abstract class Ogre : Pawn
     {
+        private List<IObserver> _observers = new List<IObserver>();
+
         public Ogre(int x, int y) : base(x, y)
         {
         }
@@ -44,5 +48,7 @@ namespace EvalOgreBoulotteur.OgreBoulotteur.Model.Pawn
             Random random = new();
             return random.Next(0, 4);
         }
+        
+       
     }
 }
