@@ -1,4 +1,5 @@
-﻿using EvalOgreBoulotteur.OgreBoulotteur.Model.Pawn.Child;
+﻿using EvalOgreBoulotteur.OgreBoulotteur.Model.Pawn;
+using EvalOgreBoulotteur.OgreBoulotteur.Model.Pawn.Child;
 using EvalOgreBoulotteur.OgreBoulotteur.Shared;
 
 namespace EvalOgreBoulotteur.OgreBoulotteur.Controller
@@ -20,10 +21,12 @@ namespace EvalOgreBoulotteur.OgreBoulotteur.Controller
             Proxy child2 = new Girl(new Proxy(new StandardChild(1, 1)));
             Proxy child3 = new Proxy(new StandardChild(10, 1));
             Proxy child4 = new Proxy(new StandardChild(12, 1));
+            Shrek shrek = new Shrek(20, 1);
             Model.AddPawn(child1);
             Model.AddPawn(child2);
             Model.AddPawn(child3);
             Model.AddPawn(child4);
+            Model.AddPawn(shrek);
         }
 
         public void GameLoop()
