@@ -1,0 +1,39 @@
+﻿using System;
+using EvalOgreBoulotteur.OgreBoulotteur.Shared;
+
+namespace EvalOgreBoulotteur.OgreBoulotteur.View
+{
+    public class View : IView
+    {
+        private IModel Model { get; set; }
+
+        public View(IModel model)
+        {
+            Model = model;
+        }
+
+        public void Show()
+        {
+            for (int y = 0; y < Model.Height; y++)
+            {
+                Console.WriteLine("");
+            }
+
+            for (int y = 0; y < Model.Height; y++)
+            {
+                string line1 = "";
+                string line2 = "";
+                for (int x = 0; x < Model.Width; x++)
+                {
+                    line1 += Model.GetSquare(x, y).GetSprite(0).Character;
+                    line1 += Model.GetSquare(x, y).GetSprite(1).Character;
+                    line2 += Model.GetSquare(x, y).GetSprite(2).Character;
+                    line2 += Model.GetSquare(x, y).GetSprite(3).Character;
+                }
+
+                Console.WriteLine(line1);
+                Console.WriteLine(line2);
+            }
+        }
+    }
+}

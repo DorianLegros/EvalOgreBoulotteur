@@ -1,12 +1,12 @@
 ﻿using System;
+using EvalOgreBoulotteur.OgreBoulotteur.Controller;
 
 namespace EvalOgreBoulotteur
 {
     class Program
     {
-        static void Main(string[] args)
-        {
-            Console.WriteLine("Hello World!");
+        static void Main() {
+            new Controller().GameLoop();
         }
     }
 }
